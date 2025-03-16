@@ -33,5 +33,5 @@ SQLD 자격증을 따기 위해 공부했던 개념이 당연하게 쓰이기에
 
 
 
-+)
+
   <img width="515" alt="SQL 00" src="https://github.com/user-attachments/assets/4e56f9d2-58dd-428e-bcb5-1266b592ae7e" />
