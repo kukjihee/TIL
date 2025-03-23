@@ -31,12 +31,16 @@ SQL 쿼리문 문법
   -> DISTINCT: Unique한 것만 보고 싶은 경우 사용(중복 제거)   
   -> 일자별 집계/ 연령대별 집계에 많이 이용   
 *HAVING : GROUP BY한 후 조건을 설정하고 싶은 경우 사용     
-*ORDER BY: 쿼리의 맨 마지막에 두고, 맨 마지막에 작성(DESC-내림차순, OSC-오름차순)   
+*ORDER BY: 쿼리의 맨 마지막에 두고, 맨 마지막에 작성(DESC-내림차순, OSC-오름차순)      
 
-   
+
+
 [Where VS Having]    
 Where: Table에 바로 조건을 설정하고 싶은 경우 사용      
-Having: Group by한 후 조건을 설정하고 싶은 경우 사용      
+Having: Group by한 후 조건을 설정하고 싶은 경우 사용         
+
+
+   <img width="478" alt="화면 캡처 2025-03-23 224636" src="https://github.com/user-attachments/assets/77413c09-59e5-4443-8890-dc28074f19c9" />   
 
    
   
