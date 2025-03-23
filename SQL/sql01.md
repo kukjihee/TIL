@@ -14,5 +14,29 @@ SQL 쿼리문 문법
 * SELECT : Table에 저장되어 있는 컬럼 선택. 여러 컬럼 명시 가능.
   -> col1 AS '별칭'으로 컬럼의 이름도 별칭 지정 가능
 
+2-5 집계(Group by+having+sum/count)
+  SELECT
+  집계할_컬럼1,
+  집계 함수( count, max, min 등)
+  ex) COUNT(DISTINCT count할 컬럼) AS col1_count    
+  FROM Table
+  GROUP BY
+  집계할_컬럼1   
+  HAVING   
+  col1_count>3   
 
-  2-4 SELECT문 연습문제   
+     
+  *GROUP BY : 같은 값끼리 모아서 그룹화. 특정 컬럼을 기준으로 모으면서 다른 컬럼에선 집계 가능   
+  -> 합, 평균, max, min 등   
+  -> DISTINCT: Unique한 것만 보고 싶은 경우 사용(중복 제거)   
+  -> 일자별 집계/ 연령대별 집계에 많이 이용   
+*HAVING : GROUP BY한 후 조건을 설정하고 싶은 경우 사용     
+*ORDER BY: 쿼리의 맨 마지막에 두고, 맨 마지막에 작성(DESC-내림차순, OSC-오름차순)   
+
+   
+[Where VS Having]    
+Where: Table에 바로 조건을 설정하고 싶은 경우 사용      
+Having: Group by한 후 조건을 설정하고 싶은 경우 사용      
+
+   
+  
