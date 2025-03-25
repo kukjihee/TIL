@@ -8,5 +8,15 @@ WHere 절에서 여러 조건을 연결하고 싶은 경우
 
 집계함수는 GROUP BY 와 같이 다님. 집계하는 기준(컬럼)이 없으면 COUNT만 쓸 수 있으나, 집계하는 기준이 있다면 그 기준 컬럼을 GROUP BY에 써줘야 함.     
 DISTINCT: 고유한 값만 보고 싶을 때 사용. UNIQUE한 값만 알고 싶은 경우 사용  
-ex) COUNT(DISTINCT user_id) AS dau -> 이런 데이터를 저장하는 곳에 접속 기록, 이벤트 로그가 여러 ROW 존재 => UNIQUE => DISTINCT   
+ex) COUNT(DISTINCT user_id) AS dau -> 이런 데이터를 저장하는 곳에 접속 기록, 이벤트 로그가 여러 ROW 존재 => UNIQUE => DISTINCT     
+
+group by 1 : select의 첫 컬럼을 의미   
+order by에도 1,2 등을 사용할 수 있음   
+1,2를 사용하면 빠르게 작성하기 좋지만 가독성 측면에서 명확하게 칼럼을 명시하는게 좋음      
+
+Where: 원본 데이터 FROM 절에 있는 데이터에 조건을 설정하고 싶은 경우   
+Having: GROUP BY와 함께 집계 결과에 조건을 설정하고 싶은 경우   
+서브쿼리: 쿼리문을 한번 감싸서 다른 쿼리문에서 사용할 수 있음   
+
+OR 조건으로 쓰는거 너무 길고 귀찮다 => IN   
 
