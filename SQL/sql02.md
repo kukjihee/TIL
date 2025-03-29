@@ -62,6 +62,7 @@ SELECT
 FROM    
 WHERE   
 
+<img width="472" alt="화면 캡처 2025-03-29 193407" src="https://github.com/user-attachments/assets/4dbc0443-1492-4909-84a2-477e3f3f3fa3" />
 
     
 
