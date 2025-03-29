@@ -74,6 +74,6 @@ SELECT
 FROM olist_orders_dataset   
 WHERE order_delivered_carrier_date    BETWEEN '2017-01-01' AND '2017-01-31'   
     AND order_delivered_customer_date IS NULL      
-    #고객에게 도착하지 않은 주문만 선택
-GROUP BY DATE(order_delivered_carrier_date)
+    #고객에게 도착하지 않은 주문만 선택   
+GROUP BY DATE(order_delivered_carrier_date)   
 ORDER BY delivered_carrier_date
