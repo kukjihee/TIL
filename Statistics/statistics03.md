@@ -155,19 +155,19 @@ OLTP -> DW(ODS) -> DM -> OLAP
 ### 1-1. 
 ![TABLE](https://github.com/ejejbb/Template/raw/main/File/2-1.PNG)
 ```
-여기에 답을 작성해주세요!
+LEFT 조인 
 ```
 
 ### 1-2. 
 ![TABLE](https://github.com/ejejbb/Template/raw/main/File/2-3.PNG)
 ```
-여기에 답을 작성해주세요!
+INNER 조인 
 ```
 
 ### 1-3. 
 ![TABLE](https://github.com/ejejbb/Template/raw/main/File/2-2.PNG)
 ```
-여기에 답을 작성해주세요!
+RIGHT 조인
 ```
 
 ### 🎉 수고하셨습니다.
