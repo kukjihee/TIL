@@ -109,3 +109,6 @@ UPPER("abc") AS result
 * DATETIME: T가 나옴/ 한국 ZONE 사용시 한국 시간과 동일   
 CURRENT_TIMESTAMP() AS timestamp_col   
 DATETIME(CURRENT_TIMESTAMP(), 'AISA/SEOUL') AS datetime_col
+
+<img width="616" alt="화면 캡처 2025-04-05 182404" src="https://github.com/user-attachments/assets/9d5629e7-e3d4-4c5f-88ee-247b364486a9" />
+
