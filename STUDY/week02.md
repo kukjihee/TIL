@@ -1,1 +1,70 @@
+## 승화님 문제
+SELECT   
+  ORDER_ID,   
+  PRODUCT_ID,   
+  DATE_FORMAT(OUT_DATE, '%Y-%m-%d') AS OUT_DATE,   
+  CASE   
+    WHEN OUT_DATE IS NULL THEN '출고미정'   
+    WHEN OUT_DATE <= '2022-05-01' THEN '출고완료'   
+    ELSE '출고대기'   
+  END AS 출고여부   
+FROM FOOD_ORDER   
+ORDER BY ORDER_ID;   
 
+  
+
+
+## 유현님 문제   
+#나의시행착오......
+#ELECT    
+#ROUTE,
+#ROUND(SUM(D_BETWEEN_DIST),2) AS TOTAL_DISTANCE,   
+#ROUND(AVG(D_BETWEEN_DIST),3) AS AVERAGE_DISTANCE   
+#FROM SUBWAY_DISTANCE   
+#GROUP BY ROUTE   
+#ORDER BY TOTAL_DISTANCE DESC   
+
+SELECT   
+  ROUTE,   
+  CONCAT(ROUND(SUM(D_BETWEEN_DIST), 2), 'km') AS TOTAL_DISTANCE,   
+  CONCAT(ROUND(AVG(D_BETWEEN_DIST), 3), 'km') AS AVERAGE_DISTANCE   
+FROM SUBWAY_DISTANCE   
+GROUP BY ROUTE   
+ORDER BY SUM(D_BETWEEN_DIST) DESC;   
+
+#CONCAT(..., "km") : 단어 붙이기
+
+
+## 내 문제
+SELECT   
+  BOARD_ID,   
+  WRITER_ID,   
+  TITLE,   
+  PRICE,   
+  CASE    
+    WHEN STATUS = 'SALE' THEN '판매중'   
+    WHEN STATUS = 'RESERVED' THEN '예약중'   
+    ELSE '거래완료'   
+  END AS STATUS   
+FROM USED_GOODS_BOARD   
+WHERE CREATED_DATE = '2022-10-05'   
+ORDER BY BOARD_ID DESC;   
+
+#CASE문    
+ WHEN 조건1 THEN 결과1         
+ WHEN 조건2 THEN 결과2   
+  ...   
+ ELSE 기본값   
+ END   
+
+#CASE문 안에서는 쉼표 사용 금지   
+
+
+## 민주님 문제
+SELECT   
+i.ITEM_ID,   
+i.ITEM_NAME   
+FROM ITEM_INFO i JOIN ITEM_TREE t   
+ON i.ITEM_ID = t.ITEM_ID   
+WHERE t.PARENT_ITEM_ID IS NULL   
+ORDER BY ITEM_ID;   
