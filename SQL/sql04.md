@@ -62,3 +62,61 @@ DATETIME "2021-01-01 15:30:00" AS second_datetime,
 )   
 ```   
 
+## 4-6   
+### 조건문 함수   
+#### 1) CASE WHEN   
+여러 조건이 있을 경우 유용     
+-> 조건의 순서에 주의   
+
+
+#문법    
+   
+```sql   
+SELECT   
+CASE   
+WHEN 조건1 THEN 조건1이 참일 경우 결과    #When들로 조건 나열할 때 "," 사용 안함     
+WHEN 조건2 THEN 조건2가 참일 경우 결과   
+ELSE 그 외 조건일 경우 결과   
+END AS 새로운 컬럼_이름   
+``` 
+
+#예시   
+```sql   
+SELECT   
+*   
+CASE   
+WHEN type1 IN ("ROCK","Ground") OR type2 IN ("ROCK","Ground") THEN "Rock&Ground"   
+ELSE type1   
+END AS new_type1   
+FROM basic.pokemon   
+```   
+
+#예시2(순서조건)   
+```sql   
+SELECT   
+eng_name,   
+attack,   
+CASE   
+WHEN attack>=50 THEN "Strong"   
+WHEN attack>=100 THEN "Very Strong"   
+ELSE "Weak"   
+END AS attack_level   
+FROM basic.pokemon   
+```   
+   
+#### 2) IF   
+단일 조건일 경우 유용   
+
+#문법   
+```sql   
+SELECT   
+IF(조건문, True일 때의 값, False일 때의 값) AS 새로운_컬럼_이름   
+```   
+
+#예시   
+```sql   
+SELECT   
+IF(1=1, '동일한 결과', '동일하지 않은 결과') AS result1,   
+IF(1=2, '동일한 결과', '동일하지 않은 결과') AS result2      
+```   
+
