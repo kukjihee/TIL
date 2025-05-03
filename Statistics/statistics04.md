@@ -50,13 +50,14 @@
 
 #### <분석 코드>   
 #필요한 패키지 임포트   
-``` python ```
+``` python   
 import seaborn as sns    
 import matplotlib.pyplot as plt   
-import pandas as pd    
+import pandas as pd
+```   
 
 #데이터 불러오기   
-```python```   
+```python   
 df=pd.read_csv("데이터셋경로")   
 #데이터 샘플 확인   
 df.head()   
@@ -67,20 +68,26 @@ df.describe()
 #왜도확인   
 df.skew()   
 #첨도확인   
-df.kurtosis()   
+df.kurtosis()
+```  
    
 #### 공분산과 상관성 분석   
 * 공분산: 각 변수의 변동을 얼마나 닮았는지 표현   
 * 상관계수: 각 변수의 변동을 얼마나 닮았는지 표현   
 -> 각 변수 간의 다른 척도기준이 그대로 반영되어 공분산 값이 지니는 크기가 상관성의 정도를 나타내지 못함   
 -> 산점도의 기울기와 상관계수는 관련이 없다. 분산의 관계성이 같다면, 기울기가 크든 작든 상관계수는 같다.   
-```python```   
+```python     
 #공분산 확인   
 df.cov()   
 #피어슨 상관계수 확인   
 df.corr(method='pearson')   
 #히트맵 시각화   
-sns.heatmap(df.corr(),cmap='viridis')   
+sns.heatmap(df.corr(),cmap='viridis')
+```
+   <img width="166" alt="화면 캡처 2025-05-03 154619" src="https://github.com/user-attachments/assets/13dc5b1c-07d4-481c-a6d9-32379b490d71" />   
+      <img width="402" alt="화면 캡처 2025-05-03 154634" src="https://github.com/user-attachments/assets/9a47868c-c4e4-4706-af21-7b73b92af655" />   
+
+   
    
 #### 시간 시각화   
 시점 요소 있는 데이터 -> 시계열 형태   
@@ -94,8 +101,13 @@ sns.heatmap(df.corr(),cmap='viridis')
    
 #### 분포 시각화   
 분포 시각화는 데이터가 처음 주어졌을 때, 변수들이 어떤 요소로 어느 정도의 비율로 구성되어 있는지 확인하는 단계. 연속형과 같은 양적 척도인지, 명목형과 같은 질적 척도인지 구분해서 그림.   
-1) 질적 척도로 이루어진 변수는 구성이 단순한 경우-> 파이차트, 도넛차트 사용   
-2) 구성 요소가 복잡한 질적 척도 표현할 때 -> 트리맵 차트 사용   
+1) 질적 척도로 이루어진 변수는 구성이 단순한 경우-> 파이차트, 도넛차트 사용
+     <img width="399" alt="화면 캡처 2025-05-03 155627" src="https://github.com/user-attachments/assets/ae96aa35-768b-433e-9d4f-8198fab95c06" />
+   
+
+3) 구성 요소가 복잡한 질적 척도 표현할 때 -> 트리맵 차트 사용
+        <img width="425" alt="화면 캡처 2025-05-03 155645" src="https://github.com/user-attachments/assets/56850337-4c68-4765-aba1-f95afdfc5aca" />
+   
 
 ##### 관계 시각화   
 하나의 요소는  X축, 다른 한 요소는 Y축에 대입하여 두 변수 간의 관계 파악.   
@@ -105,9 +117,15 @@ sns.heatmap(df.corr(),cmap='viridis')
 데이터가 지리적 위치와 관련되어 있으면 실제 지도 위에 데이터를 표현하는 것이 효과적   
 -> 거시적에서 미시적으로 진행되는 분석 방향과 같이 스토리라인을 잡고 시각화를 적용하는 것이 좋음.    
 
+   <img width="407" alt="화면 캡처 2025-05-03 155936" src="https://github.com/user-attachments/assets/15e6f551-de67-4bee-b746-484e36d69214" />   
+
 #### 박스 플롯   
 하나의 그림으로 양적 척도 데이터의 분포 및 편향성, 평균과 중앙값 등 다양한 수치를 보기 쉽게 정리해 줌.   
-* Q1, Q2, Q3, 최솟값, 최댓값 나타내줌     
+* Q1, Q2, Q3, 최솟값, 최댓값 나타내줌
+     <img width="402" alt="화면 캡처 2025-05-03 160040" src="https://github.com/user-attachments/assets/1245b36f-e20f-4470-bacc-acafa868072e" />
+  
+   <img width="224" alt="화면 캡처 2025-05-03 160133" src="https://github.com/user-attachments/assets/f110a38e-6223-4ef0-a2ed-a3775f928a97" />   
+
 
 <br>
 <br>
