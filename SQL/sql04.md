@@ -125,3 +125,8 @@ IF(1=2, '동일한 결과', '동일하지 않은 결과') AS result2
 #### 개발 공식 문서   
 프로그래밍 언어,라이브러리 등은 해당 기술을 어떻게 사용하면 좋은지에 대해 문서를 제공함   
 -> "BigQuery Documentation"을 구글에 검색하면 찾아볼 수 있음    
+
+
+
+### 수행인증샷   
+   <img width="614" alt="화면 캡처 2025-05-03 174806" src="https://github.com/user-attachments/assets/af690cc2-927c-4734-9c06-90ef9a42b4d5" />
