@@ -69,5 +69,9 @@ ON tp.pokemon_id = p.id  #JOIN key 입력
 
 
 ## 5-7   
+* JOIN: 여러 TABLE을 연결해야 할 때 사용하는 문법   
+* Key: 공통적으로 가지고 있는 컬럼   
+
+
 
 ## 수행인증샷   
