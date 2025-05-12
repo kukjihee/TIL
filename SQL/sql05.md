@@ -75,3 +75,5 @@ ON tp.pokemon_id = p.id  #JOIN key 입력
 
 
 ## 수행인증샷   
+   <img width="424" alt="화면 캡처 2025-05-12 142754" src="https://github.com/user-attachments/assets/1d613631-b0f8-46a8-9bce-e007f99d282d" />   
+   
