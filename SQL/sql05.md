@@ -45,15 +45,24 @@ EX)
 * LEFT: trainer_pokemon   
 * RIGHT: trainer   
 * RIGHT: pokemon   
-  
+
 ```sql   
 SELECT   
 tp.*,   
 t.*,   
 p.*   
+#아니면   
+#tp.*,   
+#t.*EXCEPT(id)   
+#p.*EXCEPT(id)   
+#tp에 id있으니 중복되니까 제외   
 FROM basic.trainer_pokemon AS tp   
 LEFT JOIN basic.trainer.t   
 ON tp.trainer_id = t.id   
 LEFT JOIN basic.pokemon AS p   
-ON tp.pokemon_id = p.id   
+ON tp.pokemon_id = p.id  #JOIN key 입력    
 ```   
+
+## 5-5 JOIN을 처음 공부할 때 헷갈렸던 부분   
+* 하려고 하는 "작업의 목적"에 따라   
+* JOIN의 개수에 한계는 없음   
