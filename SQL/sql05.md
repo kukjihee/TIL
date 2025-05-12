@@ -16,7 +16,10 @@ EX) 트레이너가 포획한 포켓몬 기준으로 트레이너 데이터를 �
 * (INNER) JOIN   
 * LEFT/RIGHT (OUTER) JOIN   
 * FULL (OUTER) JOIN   
-* CROSS JOIN   
+* CROSS JOIN
+  
+<img width="594" alt="화면 캡처 2025-05-12 133439" src="https://github.com/user-attachments/assets/401648ad-8bf5-4e09-91b3-277fdf47ff51" />   
+
 
 
 ## 5-4 JOIN 쿼리 작성하기   
