@@ -158,4 +158,6 @@ ORDER BY battle_id
 3) DISTINCT : 데이터의 고유값을 확인해 중복 여부 확인   
 4) IF문, CASE WHEN : 의도와 같다면 TRUE, 아니면 FALSE   
    
+### 수행 인증샷   
 
+<img width="630" alt="화면 캡처 2025-05-18 165107" src="https://github.com/user-attachments/assets/f753549f-9409-441b-bf66-feb8c18d89f0" />
