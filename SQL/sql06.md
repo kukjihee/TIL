@@ -105,6 +105,57 @@ FROM name_a
 
 
 ### 6-5 데이터 결과 검증 예시     
- 
-### 6-6 정리   
+#### <예시 문제>   
+##### 여러분은 포켓몬 트레이너들의 배틀 성적을 분석하는 작업을 맡게 되었습니다. 각 트레이너가 진행한 배틀의 승리 비율을 계산해야 하며, 배틀에 참여한 횟수가 9회 이상인 경우만 계산합니다.   
+
+#### <데이터 결과 검증 프로세스 흐름>   
+1) 전체 데이터 파악   
+2) 특정 user_id 선정   
+3) 승률 직접 COUNT : 결과 예상   
+4) 쿼리 작성     
+```sql   
+WITH battle_basic AS(    
+    SELECT   
+    id AS battle_id,   
+    player1_id AS trainer_id,   
+    winner_id   
+    FROM 'basic.battle'   
+    UNION ALL   
+    SELECT   
+    id AS battle_id,   
+    player2_id AS trainer_id,   
+    winner_id   
+    FROM 'basic.battle'   
+),battle_with_result AS(   
+    SELECT   
+    *,   
+    CASE   
+    WHEN trainer_id = winner_id THEN "WIN"   
+    WHEN winner_id IS NULL THEN "DRAW"   
+    ELSE "LOSE"   
+    END AS battle_basic   
+)   
+SELECT   
+trainer_id,   
+COUNTIF(battle_result ="WIN") AS win_count,    
+COUNT(battle_id) AS total_battle_count,   
+COUNTIF(battle_result ="WIN")/COUNT(DISTINCT battle_id) AS win_ratio      
+FROM battle_win_result       
+GROUP BY   
+trainer_id     
+HAVING    
+total_battle_count>=9      
+ORDER BY battle_id   
+```   
+
+5) 실제와 비교   
+6) 맞다면 특정 유저 조건 제외   
+
+### 6-6 정리     
+대표적으로 활용하는 SQL 문법   
+1) COUNT(*) : 행 수를 확인. 의도한 데이터의 행 개수가 맞는가?   
+2) NOT NULL : 특정 컬럼에 NULL이 존재하는가? 필수 필드가 비어있지 않은가?   
+3) DISTINCT : 데이터의 고유값을 확인해 중복 여부 확인   
+4) IF문, CASE WHEN : 의도와 같다면 TRUE, 아니면 FALSE   
+   
 
