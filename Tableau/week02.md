@@ -34,5 +34,33 @@
 ## 10강   
 ### 비율차트(2)   
 #### 파이차트   
+ctrl 키 눌러서 중복 선택해서 표현방식에 파이차트 클릭   
+단번에 차트 그리기 완료   
 
-  
+<img width="751" height="681" alt="화면 캡처 2025-07-12 163218" src="https://github.com/user-attachments/assets/fe83d3f6-86da-42e4-8d8a-c7ba6baebd64" />
+
+## 11강   
+### 상관 관계와 분포를 나타내는 차트   
+#### 스캐터 플롯  
+<img width="748" height="684" alt="화면 캡처 2025-07-12 164938" src="https://github.com/user-attachments/assets/0b4bb6f1-3a7d-485e-a87f-c0264f0610fd" />
+
+#### 박스 플롯   
+<img width="742" height="719" alt="화면 캡처 2025-07-12 164814" src="https://github.com/user-attachments/assets/6f457423-37cb-464e-ab8e-8a37e91e0618" />   
+
+<img width="748" height="699" alt="화면 캡처 2025-07-12 165146" src="https://github.com/user-attachments/assets/f0705560-da10-4f51-8120-aee2c3a13826" />   
+
+#### 히스토그램   
+<img width="742" height="695" alt="화면 캡처 2025-07-12 164852" src="https://github.com/user-attachments/assets/d519ce94-1460-40b4-b3c6-0f90621f9557" />
+
+## 12강
+### 스캐터 플롯(Scatter plot)   
+#### 계산된 필드 만들기   
+새로운 필드 만드는거!    
+<img width="737" height="652" alt="화면 캡처 2025-07-12 165734" src="https://github.com/user-attachments/assets/f9e53acd-09d3-47cd-85e3-e0e10bf2bb02" />   
+
+<img width="1269" height="698" alt="화면 캡처 2025-07-12 170608" src="https://github.com/user-attachments/assets/488e2492-e0ba-477c-98fe-f97d32101740" />   
+
+#### 수강인증   
+<img width="629" height="464" alt="화면 캡처 2025-07-12 170702" src="https://github.com/user-attachments/assets/3032e41f-20ac-456c-ba5d-f4329accc77e" />
+
+
