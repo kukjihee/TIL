@@ -238,8 +238,10 @@ https://school.programmers.co.kr/learn/courses/30/lessons/131115
 ---
 
 ## 문제 인증란
+<img width="637" height="440" alt="화면 캡처 2025-09-08 192024" src="https://github.com/user-attachments/assets/1335c492-fabf-44b8-a4fd-e4ee21c608ac" />   
+<img width="635" height="400" alt="화면 캡처 2025-09-08 192158" src="https://github.com/user-attachments/assets/00bb62d0-6634-4cbe-9831-71ec5c66949c" />   
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+
 
 
 
@@ -265,8 +267,23 @@ GROUP BY customer_id;
 
 
 
-~~~
-여기에 답을 작성해주세요!
+~~~     
+SELECT customer_id, COUNT(*) AS recent_order_count
+FROM (
+  SELECT *
+  FROM Orders
+  WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+) AS RecentOrders
+GROUP BY customer_id;
+
+* CTE
+> 장점: 여러번 재사용 가능. 쿼리가 단계별로 분명해진다.
+> 단점: 모르겟어요...
+
+* 서브쿼리
+> 장점: 짧고 단순
+> 단점: 재사용 불가. 중첩이 많아지면 가독성 떨어짐   
+
 ~~~
 
 
