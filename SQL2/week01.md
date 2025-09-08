@@ -145,8 +145,32 @@ ANY의 또 다른 별칭
 
 ### < 서브쿼리 + EXISTS , NOT EXISTS >   
 - EXISTS : 서브쿼리가 한 행이라도 반환하면 TRUE   
-- NOT EXISTS : 서브쿼리가 아무 행도 반환하지 않으면 TRUE  
+- NOT EXISTS : 서브쿼리가 아무 행도 반환하지 않으면 TRUE
 
+
+EX) "특정 도시에서 존재하지 않는 상점이 있나?"   
+= "모든 도시에 존재하는 상점 유형을 찾는다.   
+``` SQL
+SELECT DISTINCT store_type FROM stores
+  WHERE NOT EXISTS (
+    SELECT * FROM cities WHERE NOT EXISTS (
+      SELECT * FROM cities_stores
+       WHERE cities_stores.city = cities.city
+         AND cities_stores.store_type = stores.store_type
+    )
+  );   
+```   
+
+### < 상관 서브쿼리 >   
+서브쿼리 안에서 외부쿼리에 있는 테이블을 참조하는 경우   
+``` SQL   
+SELECT * FROM t1
+  WHERE column1 = ANY (
+    SELECT column1 FROM t2
+    WHERE t2.column2 = t1.column2
+  );   
+```   
+t1의 column2를 참조하고 있음   
 
 
 # 2. CTE
