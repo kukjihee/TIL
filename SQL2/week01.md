@@ -180,8 +180,35 @@ t1의 column2를 참조하고 있음
 * CTE에 대한 문법을 이해하고 활용할 수 있다. 
 ~~~
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+## WITH(Common Table Expressions)   
+< CTE >   
+공통 테이블 표현   
+: 하나의 SQL문 내에서만 존재하는 이름 있는 임시 결과 집함.   
+해당 문장에서 여러번 참조할 수 있으며, 특히 복잡한 쿼리를 구조적으로 나누고 가독성을 높이는 데 유용   
 
+``` SQL
+WITH
+  cte1 AS (SELECT a, b FROM table1),
+  cte2 AS (SELECT c, d FROM table2)
+SELECT b, d FROM cte1 JOIN cte2
+WHERE cte1.a = cte2.c;
+```
+* cte1, cte2는 각각의 하위 쿼리(subquery) 결과 집합을 이름으로 정의   
+* 이후 SELECT 문에서 마치 테이블처럼 참조 가능
+
+[CTE 구문 규칙]   
+* WITH 절은 SELECT, UPDATE, DELETE 문 앞에 위치할 수 있음   
+* INSERT, REPLACE, CREATE TABLE/VIEW, DECLARE CURSOR, EXPLAIN 문에서도 사용 가능   
+* 하나의 문장 레벨에는 WITH 절 하나만 허용   
+* 여러 CTE는 , 로 구분하여 나열해야 함   
+* CTE 이름은 반드시 유일해야 함   
+* 이름 해석 순서는 서브쿼리 > CTE > 기본 테이블/뷰 순서
+
+[컬럼 이름 결정 규칙]   
+* CTE 정의 시 (col1, col2, …)처럼 이름을 지정하면 해당 컬럼명 사용   
+* 지정하지 않으면 첫 번째 SELECT 문의 select list 에서 컬럼명을 가져옴
+
+  
 
 
 
