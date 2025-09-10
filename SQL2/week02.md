@@ -144,6 +144,10 @@ https://leetcode.com/problems/department-highest-salary/description/
 ## 문제 인증란
 
 <!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+<img width="532" height="601" alt="화면 캡처 2025-09-10 174648" src="https://github.com/user-attachments/assets/0ac721bd-7e60-4c0b-b4cf-0dad934a1529" />   
+
+<img width="397" height="612" alt="화면 캡처 2025-09-10 181108" src="https://github.com/user-attachments/assets/6e08f191-7630-45e7-8156-3f88f96c997e" />   
+모르겠어요...ㅜㅜ
 
 
 
