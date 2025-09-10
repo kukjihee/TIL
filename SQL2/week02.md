@@ -166,7 +166,9 @@ SELECT name FROM blackList;
 <br>
 
 ~~~
-여기에 답을 작성해주세요!
+중복을 제거 → UNION
+
+중복도 포함해서 전체 데이터 → UNION ALL
 ~~~
 
 ## 참고자료
