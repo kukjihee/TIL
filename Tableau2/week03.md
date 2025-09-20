@@ -164,6 +164,9 @@
 ```
 
 <!-- DArt-B superstore가 아닌 개인 superstore 파일을 사용했다면 값이 다르게 표시될 수 있습니다.-->
+### 풀이   
+<img width="824" height="646" alt="화면 캡처 2025-09-20 215554" src="https://github.com/user-attachments/assets/c136ca99-d623-453d-a524-3327a384968b" />
+푸앙이는 연도 필터를 컨텍스트 필터로 지정하지 않아서 top10필터보다 나중에 적용됨.   
 
 
 
@@ -183,6 +186,8 @@
 
 기타를 제외하고 지정한 5개의 그룹 하위 목들만을 이용해 아래와 같이 지역별 누적 막대그래프를 그려봐주세요.
 ```
+<img width="982" height="657" alt="화면 캡처 2025-09-20 221552" src="https://github.com/user-attachments/assets/2dc8292c-c5eb-49cd-8294-e6a981c8db45" />
+
 
 ![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week2-3.png)
 
