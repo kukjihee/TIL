@@ -103,13 +103,10 @@
 
 WHERE와 달리 집계 함수 조건 가능.
 
-단, 원래는 GROUP BY 컬럼/집계 함수만 허용되나 MySQL 확장으로 SELECT alias도 허용.
 
 ### ORDER BY
 
-정렬. ASC (오름차순, 기본), DESC (내림차순).
-
-숫자 인덱스(1,2,3…)도 가능하나 비표준 → 권장되지 않음.
+정렬. ASC (오름차순, 기본), DESC (내림차순)
 
 ### LIMIT
 
@@ -117,20 +114,9 @@ WHERE와 달리 집계 함수 조건 가능.
 
 LIMIT 5 → 처음 5행
 LIMIT 5, 10 → 6번째부터 10개
-PostgreSQL 호환: LIMIT 10 OFFSET 5
-INTO
 
-결과를 파일/변수에 저장.
 
-INTO OUTFILE
-INTO DUMPFILE
-INTO var_name …
-FOR UPDATE / FOR SHARE
 
-조회된 행을 잠금. 트랜잭션 종료 시까지 유지.
-
-NOWAIT: 잠금 불가 시 에러 반환
-SKIP LOCKED: 잠긴 행은 건너뛰고 반환
 
 
 
@@ -167,10 +153,12 @@ https://school.programmers.co.kr/learn/courses/30/lessons/133027
 
 ## 문제 인증란
 
-<img width="682" height="581" alt="화면 캡처 2025-09-24 122330" src="https://github.com/user-attachments/assets/2e920193-7a3b-4a51-86e6-4048d2d00e5a" />
+<img width="770" height="587" alt="화면 캡처 2025-09-24 124446" src="https://github.com/user-attachments/assets/48373132-7ef3-4311-862b-52619433a979" />
+<img width="879" height="425" alt="화면 캡처 2025-09-24 124536" src="https://github.com/user-attachments/assets/ca8c4885-1cbe-40b6-816f-197f4d0f150e" />
 
 
-<img width="770" height="587" alt="화면 캡처 2025-09-24 124446" src="https://github.com/user-attachments/assets/787b633b-fe93-4c69-91c6-bc5dae1e143d" />
+
+
 
 
 ---
