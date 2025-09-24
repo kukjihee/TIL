@@ -71,7 +71,66 @@
 * SubQuery나 RANK 대신 LIMIT으로 간단한 순위 집계가 가능함을 이해한다. 
 ~~~
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+### select_expr
+
+조회할 컬럼 또는 표현식 지정. 최소 1개 필요.
+
+* → 모든 컬럼 선택, tbl_name.* → 특정 테이블의 모든 컬럼 선택.
+
+보이지 않는 컬럼(invisible column)은 반드시 명시해야 조회됨.
+
+### FROM table_references
+
+조회할 테이블 지정. 여러 테이블을 지정하면 조인.
+
+테이블/컬럼 별칭 가능. 인덱스 힌트(USE INDEX, FORCE INDEX) 가능.
+
+### PARTITION
+
+파티션 테이블에서 특정 파티션만 조회 가능.
+
+### WHERE
+
+행을 필터링하는 조건. 집계 함수 사용 불가.
+
+### GROUP BY
+
+행을 그룹화. WITH ROLLUP 옵션 사용 가능.
+
+→ HAVING은 그룹화된 결과에 조건을 적용.
+
+### HAVING
+
+WHERE와 달리 집계 함수 조건 가능.
+
+단, 원래는 GROUP BY 컬럼/집계 함수만 허용되나 MySQL 확장으로 SELECT alias도 허용.
+
+### ORDER BY
+
+정렬. ASC (오름차순, 기본), DESC (내림차순).
+
+숫자 인덱스(1,2,3…)도 가능하나 비표준 → 권장되지 않음.
+
+### LIMIT
+
+반환할 행 수 제한.
+
+LIMIT 5 → 처음 5행
+LIMIT 5, 10 → 6번째부터 10개
+PostgreSQL 호환: LIMIT 10 OFFSET 5
+INTO
+
+결과를 파일/변수에 저장.
+
+INTO OUTFILE
+INTO DUMPFILE
+INTO var_name …
+FOR UPDATE / FOR SHARE
+
+조회된 행을 잠금. 트랜잭션 종료 시까지 유지.
+
+NOWAIT: 잠금 불가 시 에러 반환
+SKIP LOCKED: 잠긴 행은 건너뛰고 반환
 
 
 
