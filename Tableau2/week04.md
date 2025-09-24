@@ -137,7 +137,11 @@ ex) 누계, 차이, 비율 차이, 구성 비율, 순위, 백분위수
 
 <!-- 아래 예시 이미지를 삭제하고, 직접 만든 시트 사진을 올려주세요. 시트의 이름은 본인 이름으로 기입해주세요-->
 
-![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week3-1.png)
+<img width="972" height="548" alt="화면 캡처 2025-09-24 152622" src="https://github.com/user-attachments/assets/dbf30c1d-74b2-4c0a-8b44-de2af9cf768b" />
+
+1. 시/도 상위 20 집합
+2. 시/도 수익률 음수 집합
+3. 시/도 상위 20 + 수익률 음수 교집합
 
 
 
