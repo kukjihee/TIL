@@ -167,8 +167,10 @@ https://school.programmers.co.kr/learn/courses/30/lessons/133027
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+<img width="682" height="581" alt="화면 캡처 2025-09-24 122330" src="https://github.com/user-attachments/assets/2e920193-7a3b-4a51-86e6-4048d2d00e5a" />
 
+
+<img width="770" height="587" alt="화면 캡처 2025-09-24 124446" src="https://github.com/user-attachments/assets/787b633b-fe93-4c69-91c6-bc5dae1e143d" />
 
 
 ---
@@ -210,7 +212,18 @@ UNION ALL
 
 
 ~~~
-여기에 답을 작성해주세요!
+SELECT region,
+       restaurant_name,
+       review_count
+FROM (
+    SELECT region,
+           restaurant_name,
+           review_count,
+           RANK() OVER (PARTITION BY region ORDER BY review_count DESC) AS rnk
+    FROM Restaurants
+) t
+WHERE rnk <= 2;
+
 ~~~
 
 
