@@ -192,6 +192,7 @@ Workbook > Worksheet > Field > Row/Column > Mark
 
 
 <!-- 여기까지 오는 과정 중 알게 된 점을 기입하고, 결과는 시트 명을 본인 이름으로 바꾸어 표시해주세요.-->
+<img width="659" height="550" alt="화면 캡처 2025-10-29 152200" src="https://github.com/user-attachments/assets/b52aa5b4-41f8-4608-a44e-438c754303f9" />
 
 
 
@@ -205,11 +206,10 @@ Workbook > Worksheet > Field > Row/Column > Mark
  어떤 값이 각 지표의 평균보다 낮은 값을 갖고 있다면 색깔을 주황색으로, 그것보다 높다면 파란색으로 표시하고 싶어요. 그 평균값은 각 지표별로 달라야 해요.
 ```
 
-![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week4-2.png)
-
 
 
 <!-- 예시 사진은 지워주세요-->
+<img width="684" height="491" alt="화면 캡처 2025-10-29 160805" src="https://github.com/user-attachments/assets/100d50e9-1beb-4cf8-9139-f4ee44a77796" />
 
 
 
