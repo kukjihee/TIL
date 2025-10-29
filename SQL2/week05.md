@@ -68,9 +68,32 @@
 ✅ 학습 목표 :
 * 'WITH RECURSIVE' 문법을 활용해 계층형 구조를 탐색할 수 있다.
 ~~~
+```sql
+WITH RECURSIVE cte (n) AS (
+ SELECT 1        -- 비재귀(시드) 부분
+ UNION ALL
+ SELECT n + 1 FROM cte -- 재귀 부분
+ WHERE n < 5
+)
+SELECT * FROM cte;
+```
+* 어떤 CTE라도 자신을 참조한다면 WITH 절은 반드시 WITH RECURSIVE 로 시작해야 한다.
+* 재귀 SELECT 내부에서는 다음을 사용할 수 없다
+  - 집계 함수 (SUM() 등)
+  - 윈도 함수
+  - GROUP BY
+  - ORDER BY
+  - DISTINCT
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
-
+* 종료 조건을 깜빡하면 무한 재귀에 빠질 수 있으므로, 다음 안전장치를 활용하자.
+```sql
+WITH RECURSIVE cte(n) AS (
+  SELECT 1
+  UNION ALL
+  SELECT n + 1 FROM cte LIMIT 10000
+)
+SELECT /*+ MAX_EXECUTION_TIME(1000) */ * FROM cte;
+```
 
 
 ## 2. 셀프 조인
@@ -80,7 +103,13 @@
 * 같은 테이블 내에서 상호 관계를 탐색할 수 있는 셀프 조인의 구조를 이해하고 사용할 수 있다. 
 ~~~
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+```sql
+SELECT A.컬럼명, B.컬럼명
+FROM 테이블명 A
+JOIN 테이블명 B
+  ON A.공통컬럼 = B.공통컬럼;
+```
+
 
 
 
@@ -124,7 +153,12 @@
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+<img width="734" height="467" alt="화면 캡처 2025-10-29 124818" src="https://github.com/user-attachments/assets/b252df26-3a24-4178-8002-f790bd344d73" />   
+
+<img width="743" height="467" alt="화면 캡처 2025-10-29 124943" src="https://github.com/user-attachments/assets/88f19483-532f-4806-8495-aa1dbafa3462" />
+
+<img width="758" height="430" alt="화면 캡처 2025-10-29 125051" src="https://github.com/user-attachments/assets/6cb94e63-f1ec-4e9c-8994-24b69965f6ef" />
+
 
 
 
@@ -147,7 +181,37 @@ LEFT JOIN Employees e2 ON e1.manager_id = e2.id;
 
 
 ~~~
-여기에 답을 작성해주세요.
+WITH RECURSIVE OrgCTE AS (
+    -- ① 루트 노드
+    SELECT 
+        id,
+        name,
+        manager_id,
+        1 AS depth
+    FROM Employees
+    WHERE manager_id IS NULL
+
+    UNION ALL
+
+    -- ② 하위 노드
+    SELECT 
+        e.id,
+        e.name,
+        e.manager_id,
+        o.depth + 1 AS depth
+    FROM Employees e
+    JOIN OrgCTE o
+      ON e.manager_id = o.id
+)
+-- ③ 최종
+SELECT 
+    id,
+    name,
+    manager_id,
+    depth
+FROM OrgCTE
+ORDER BY depth DESC;
+
 ~~~
 
 
