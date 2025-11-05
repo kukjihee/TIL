@@ -66,7 +66,23 @@ https://shxrecord.tistory.com/181
 * 데이터를 행 → 열 방향으로 전개하는 기본 로직을 이해한다.
 ```
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요. -->
+* pivot table
+  - 2가지 컬럼(X, Y)에 따라 그룹화되어 1개의 컬럼으로 표현된 집계함수 정보(K)를 X, Y 중 하나를 행렬전환하여, K값을 행과 열의 2차원적 정보로 조회할 수 있게 함.
+    
+  ```sql
+  with temp as
+    (select 컬럼이름X,
+            컬럼이름Y,
+            컬럼이름K
+     from 테이블이름A)
+  select * from temp
+  pivot (
+    집계함수(컬럼이름K) as 별명K
+    for 컬럼이름Y in (컬럼X값1 as 별명X1,
+                     컬럼X값2 as 별명X2,
+                     ...)
+  );
+```
 
 
 
@@ -78,7 +94,17 @@ https://shxrecord.tistory.com/181
 * `UNION ALL`로 수동 구현 시의 컬럼 이름 통일과 데이터 병합 과정을 익힌다.
 ```
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요. -->
+* 그룹별로 집계된 집계함수 결과값이 각각 1개의 컬럼에 표시되는 경우가 UNPIVOT   
+* ​UNPIVOT은 PIVOT의 반대 역할을 수행. 즉, 피벗 테이블을 해제하거나, 피벗 테이블 형식의 테이블을 그렇지 않은 형태로 만듦
+
+```sql
+select * from 테이블이름A
+UNPIVOT (
+컬럼이름K for 컬럼이름Y in (컬럼이름Y1_K as 컬럼Y값1,
+                           컬럼이름Y2_K as 컬럼Y값2,
+                           ...)
+);
+```
 
 
 
@@ -100,9 +126,26 @@ https://leetcode.com/problems/reformat-department-table/description/
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+```sql
+SELECT
+    id,
+    SUM(CASE WHEN month = 'Jan' THEN revenue ELSE NULL END) AS Jan_Revenue,
+    SUM(CASE WHEN month = 'Feb' THEN revenue ELSE NULL END) AS Feb_Revenue,
+    SUM(CASE WHEN month = 'Mar' THEN revenue ELSE NULL END) AS Mar_Revenue,
+    SUM(CASE WHEN month = 'Apr' THEN revenue ELSE NULL END) AS Apr_Revenue,
+    SUM(CASE WHEN month = 'May' THEN revenue ELSE NULL END) AS May_Revenue,
+    SUM(CASE WHEN month = 'Jun' THEN revenue ELSE NULL END) AS Jun_Revenue,
+    SUM(CASE WHEN month = 'Jul' THEN revenue ELSE NULL END) AS Jul_Revenue,
+    SUM(CASE WHEN month = 'Aug' THEN revenue ELSE NULL END) AS Aug_Revenue,
+    SUM(CASE WHEN month = 'Sep' THEN revenue ELSE NULL END) AS Sep_Revenue,
+    SUM(CASE WHEN month = 'Oct' THEN revenue ELSE NULL END) AS Oct_Revenue,
+    SUM(CASE WHEN month = 'Nov' THEN revenue ELSE NULL END) AS Nov_Revenue,
+    SUM(CASE WHEN month = 'Dec' THEN revenue ELSE NULL END) AS Dec_Revenue
+FROM Department
+GROUP BY id;
+```
 
-
+(컴퓨터 오류인지 문제 제출이 안돼서 코드라도 제출합니당..ㅠㅠ)
 
 ## 확인 문제 
 
@@ -127,7 +170,15 @@ https://leetcode.com/problems/reformat-department-table/description/
 | B          | Mar       | 140       |
 
 ```
-여기에 SQL 쿼리를 작성해주세요!
+SELECT branch, 'Jan' AS month, Jan_sales AS sales
+FROM sales_by_branch
+UNION ALL
+SELECT branch, 'Feb' AS month, Feb_sales AS sales
+FROM sales_by_branch
+UNION ALL
+SELECT branch, 'Mar' AS month, Mar_sales AS sales
+FROM sales_by_branch;
+
 ```
 
 
@@ -155,7 +206,13 @@ https://leetcode.com/problems/reformat-department-table/description/
 | B          | 90            | 110           | 140           |
 
 ~~~
-여기에 SQL 쿼리를 작성해주세요!
+SELECT
+    branch,
+    SUM(CASE WHEN month = 'Jan' THEN sales END) AS Jan_sales,
+    SUM(CASE WHEN month = 'Feb' THEN sales END) AS Feb_sales,
+    SUM(CASE WHEN month = 'Mar' THEN sales END) AS Mar_sales
+FROM branch_sales
+GROUP BY branch;
 ~~~
 
 
