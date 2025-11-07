@@ -146,6 +146,7 @@
 
 어떤 부분에 가중을 두었는지, 어떤 사용자 편의성을 고려하였는지에 대한 설명이 필요합니다.
 
+<img width="811" height="578" alt="화면 캡처 2025-11-07 184912" src="https://github.com/user-attachments/assets/482b3142-07b4-4179-a4d6-227042a3dc1a" />
 
 
 <br>
