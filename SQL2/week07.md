@@ -127,7 +127,16 @@
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+<img width="727" height="538" alt="화면 캡처 2025-11-12 122341" src="https://github.com/user-attachments/assets/de0d0bd7-0e2c-465f-abcf-67b497b9e670" />   
+<img width="757" height="473" alt="2" src="https://github.com/user-attachments/assets/e5d79795-cf87-4020-a203-7397588a1376" />   
+<img width="909" height="397" alt="3" src="https://github.com/user-attachments/assets/c094564b-04c6-45ee-841d-d191113ec47a" />   
+<img width="925" height="382" alt="4" src="https://github.com/user-attachments/assets/11a2d46c-0b9d-4eee-993e-c3334138b85a" />   
+<img width="922" height="383" alt="5" src="https://github.com/user-attachments/assets/71585be8-f2ba-43ff-a2ff-2043796e739c" />
+
+
+
+
+
 
 ---
 
@@ -143,9 +152,32 @@ FROM customers
 WHERE email REGEXP '(@gmail\\.com|@naver\\.com)$';
 ```
 
-1. > 위 쿼리가 어떤 의미인지 설명하고, LIKE로 동일한 결과를 내는 방법도 함께 제시해보세요.
+1. >
+@gmail\\.com 또는 @naver\\.com 으로 끝나는 문자열($) 을 찾는다.
 
-2. > email이 빈 문자열이거나 NULL인 경우는 어떻게 처리해야 할지 고민해보세요.
+| → OR 조건
+
+\\. → 정규식에서 .은 모든 문자이므로, 실제 마침표(.)를 의미하려면 \\.로 escape 필요
+
+즉, 이메일이 @gmail.com 이거나 @naver.com 으로 끝나는 고객만 조회
+
+
+=> 
+```sql
+SELECT *
+FROM customers
+WHERE email LIKE '%@gmail.com'
+   OR email LIKE '%@naver.com';
+```
+
+2. > 
+```sql
+SELECT *
+FROM customers
+WHERE email IS NOT NULL
+  AND email <> ''
+  AND (email REGEXP '(@gmail\\.com|@naver\\.com)$');
+```
 
 
 
@@ -181,7 +213,9 @@ WHERE email REGEXP '(@gmail\\.com|@naver\\.com)$';
 > - 테이블 명은 Student로 해주세요.
 
 ~~~
-여기에 쿼리를 작성해주세요.
+SELECT *
+FROM Student
+WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 ~~~
 
 
